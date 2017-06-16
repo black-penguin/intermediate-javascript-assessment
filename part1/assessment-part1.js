@@ -7,20 +7,24 @@
 
 // Given the following nested functions:
 
-function daBears(){
+function daBears()
+{
   var isFurry = true;
 
-  function papaBear (){
+  function papaBear ()
+  {
     var porridge = "Too Hot!";
     var chair = "Too Big!";
     var bed = "Too Hard!";
     var feeling = "Angry";
 
-    function mamaBear(){
+    function mamaBear()
+    {
       var porridge = "Too Cold!";
       var bed = "Too Soft!";
 
-      function babyBear(){
+      function babyBear()
+      {
         var porridge = "Just right!";
         var chair = "Just right!";
         var bed = "Just right!";
@@ -30,7 +34,8 @@ function daBears(){
     }
   }
 
-  function goldilocks(){
+  function goldilocks()
+  {
     var feeling = "Hungry";
     var isFurry = false;
     var isDinner = true;
@@ -44,6 +49,7 @@ function daBears(){
 // (Delete wrong answers, leave correct ones)
 
 var fairyTale1 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+
 
 // Which function(s) access the "feeling" variable and get "Hungry"
 // (Delete wrong answers, leave correct ones)
@@ -82,8 +88,22 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // "charger" once, and invoke it twice on "mustang".
 
 // CODE HERE...
+function Vehicle()
+{
+  this.gasRemaining=100;
+}
 
+Vehicle.prototype.drive =function()
+{
+  this.gasRemaining=this.gasRemaining-25;
+};
 
+var mustang = new Vehicle();
+mustang.drive();
+mustang.drive();
+
+var charger = new Vehicle();
+charger.drive();
 
 
 
@@ -108,6 +128,31 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 
 // CODE HERE...
+String.prototype.grammarPolice =function()
+{
+  var nStr=this.split(" ");
+  // console.log(nStr);
+  for (var i = 0; i < nStr.length; i++)
+  {
+    console.log(nStr.charAt(0).toUpperCase() + nStr.slice(1));
+    // for (var j = 0; j < nStr[i].length; j++)
+    // {
+    //   if(j===0)
+    //   {
+    //     nStr[i][0].toUpperCase();
+    //   }
+    //   else
+    //   {
+    //     nStr[i][j]=nStr[i][j].toLowerCase();
+        // console.log(nStr[i][j].toLowerCase());
+      // }
+    // }
+    // console.log(nStr[i]);
+  }
+
+  nStr=nStr.join(" ");
+  // console.log("bug", nStr);
+};
 
 
 
@@ -126,7 +171,15 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // In all other cases, return "Different values"
 
 // CODE HERE...
-
+function valueType(p1, p2)
+{
+  if(p1===p2)
+    return "Exactly the same";
+  else if(p1==p2)
+    return "Same value, different types"
+  else
+    return "Different values";
+}
 
 
 // *************
@@ -140,4 +193,9 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 var theAnswer = "Unknown";
 
+
 // CODE HERE...
+function promiseCatcher(str)
+{
+  theAnswer=42;
+}
